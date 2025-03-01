@@ -7,13 +7,71 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         function abrirAba(aba) {
-            // Esconde todas as abas
-            document.querySelectorAll('.aba-conteudo').forEach(div => {
-                div.style.display = 'none';
-            });
+            if (aba === "grid") {
+                document.body.innerHTML = `
+                <!DOCTYPE html>
+                <html lang="pt">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Dashboard App Inatel</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            margin: 0;
+                            padding: 0;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                        .container {
+                            width: 414px;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        header {
+                            background-color: #f8f8f8;
+                            padding: 16px;
+                            text-align: center;
+                            font-size: 18px;
+                            font-weight: bold;
+                        }
+                        .mensagens, .aulas, .noticias {
+                            padding: 16px;
+                            border-bottom: 1px solid #ddd;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <header>
+                            Olá Raphael
+                        </header>
+                        <section class="mensagens">
+                            <p>Você possui um armário reservado com entrega para hoje.</p>
+                            <p>Você possui uma pendência no financeiro.</p>
+                        </section>
+                        <section class="aulas">
+                            <div>Disciplina - Sala e Horário</div>
+                            <div>Disciplina - Sala e Horário</div>
+                            <div>Disciplina - Sala e Horário</div>
+                        </section>
+                        <section class="noticias">
+                            <div>Card de Notícias</div>
+                        </section>
+                    </div>
+                </body>
+                </html>
+                `;
+            } else {
+                // Esconde todas as abas
+                document.querySelectorAll('.aba-conteudo').forEach(div => {
+                    div.style.display = 'none';
+                });
 
-            // Exibe a aba selecionada
-            document.getElementById(aba).style.display = 'block';
+                // Exibe a aba selecionada
+                document.getElementById(aba).style.display = 'block';
+            }
         }
 
         function reservarArmario() {
@@ -88,7 +146,6 @@
         <div class="tabs">
             <button onclick="abrirAba('reserva')">Reserva de Armário</button>
             <button onclick="abrirAba('grid')">Grid e Responsividade</button>
-            <button onclick="abrirAba('exercicio3')">Exercício 3</button>
         </div>
 
         <!-- Conteúdo das abas -->
@@ -103,15 +160,6 @@
             <p id="resultado"></p>
         </div>
 
-        <div id="grid" class="aba-conteudo">
-            <h2>Grid e Responsividade</h2>
-            <p>Conteúdo sobre Grid e Responsividade aqui.</p>
-        </div>
-
-        <div id="exercicio3" class="aba-conteudo">
-            <h2>Exercício 3</h2>
-            <p>Conteúdo do exercício 3 aqui.</p>
-        </div>
     </div>
 
 </body>
