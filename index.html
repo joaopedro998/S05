@@ -7,69 +7,140 @@
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
     <style>
-        .tabs {
+        /* Estilos para as abas */
+        .abas {
             display: flex;
-            gap: 16px;
             margin-bottom: 20px;
         }
-        .tab-button {
+        .abas button {
             padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
             border: none;
+            background-color: #f4c542;
             cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
             border-radius: 5px;
         }
-        .tab-button:hover {
-            background-color: #0056b3;
+        .abas button:hover {
+            background-color: #d9a7c7;
         }
-        .tab-content {
+        .conteudo {
             display: none;
-            padding: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
         }
-        .active {
+        .conteudo.ativo {
             display: block;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Reserva de Armário</h2>
-        <label for="tipoArmario">Selecione o tipo de armário:</label>
-        <select id="tipoArmario">
-            <option value="padrao">Padrão</option>
-            <option value="duplo">Duplo</option>
-        </select>
-        <button onclick="reservarArmario()">Reservar</button>
-        <p id="resultado"></p>
-    </div>
+        <!-- Abas -->
+        <div class="abas">
+            <button onclick="mostrarAba('reserva')">Reserva de Armário</button>
+            <button onclick="mostrarAba('grid')">Grid e Responsividade</button>
+        </div>
 
-    <!-- Abas para alternar entre conteúdos -->
-    <div class="tabs">
-        <button class="tab-button" onclick="openTab('grid')">Grid</button>
-        <button class="tab-button" onclick="openTab('responsividade')">Responsividade</button>
-    </div>
+        <!-- Conteúdo da aba "Reserva de Armário" -->
+        <div id="reserva" class="conteudo ativo">
+            <h2>Reserva de Armário</h2>
+            <label for="tipoArmario">Selecione o tipo de armário:</label>
+            <select id="tipoArmario">
+                <option value="padrao">Padrão</option>
+                <option value="duplo">Duplo</option>
+            </select>
+            <button onclick="reservarArmario()">Reservar</button>
+            <p id="resultado"></p>
+        </div>
 
-    <div id="grid" class="tab-content">
-        <h3>Grid</h3>
-        <p>Conteúdo sobre a estrutura de Grid...</p>
-    </div>
-    
-    <div id="responsividade" class="tab-content">
-        <h3>Responsividade</h3>
-        <p>Conteúdo sobre responsividade...</p>
-    </div>
+        <!-- Conteúdo da aba "Grid e Responsividade" -->
+        <div id="grid" class="conteudo">
+            <!-- Código HTML básico -->
+            <iframe srcdoc='
+                <!DOCTYPE html>
+                <html lang="pt-BR">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Estrutura de Contêineres</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+                        .container { width: 80%; margin: auto; }
+                        .header { background-color: #f4c542; padding: 20px; text-align: center; }
+                        .mensagens { background-color: #d9a7c7; padding: 20px; margin: 10px 0; }
+                        .main { background-color: #a7d9c7; padding: 20px; margin: 10px 0; }
+                        .noticias { background-color: #d97a7a; padding: 20px; margin: 10px 0; }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="header"><h1>Olá Raphael</h1></div>
+                        <div class="mensagens">
+                            <p>Você possui um armário reservado com entrega para hoje.</p>
+                            <p>Você possui uma pendência no financeiro.</p>
+                        </div>
+                        <div class="main">
+                            <h2>Disciplinas</h2>
+                            <ul>
+                                <li>Disciplina - Sala e Horário</li>
+                                <li>Disciplina - Sala e Horário</li>
+                                <li>Disciplina - Sala e Horário</li>
+                            </ul>
+                        </div>
+                        <div class="noticias">
+                            <h2>Card de Notícias</h2>
+                            <p>Subtítulo</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            ' style="width: 100%; height: 500px; border: none;"></iframe>
 
-    <script>
-        function openTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            document.getElementById(tabId).classList.add('active');
-        }
-    </script>
+            <!-- Código do Dashboard Responsivo -->
+            <iframe srcdoc='
+                <!DOCTYPE html>
+                <html lang="pt-BR">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Dashboard - App Inatel</title>
+                    <style>
+                        * { margin: 0; padding: 0; box-sizing: border-box; }
+                        body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 16px; }
+                        .container { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 16px; }
+                        .header { background-color: #f4c542; padding: 20px; text-align: center; font-size: 20px; font-weight: bold; border-radius: 8px; }
+                        .mensagens { background-color: #d9a7c7; padding: 16px; border-radius: 8px; }
+                        .mensagens p { margin-bottom: 8px; }
+                        .main { background-color: #a7d9c7; padding: 16px; border-radius: 8px; display: flex; flex-direction: column; gap: 12px; }
+                        .disciplina { background-color: #fff; padding: 12px; border-radius: 6px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); }
+                        .noticias { background-color: #d97a7a; padding: 16px; border-radius: 8px; text-align: center; }
+                        @media (min-width: 600px) {
+                            .main { flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
+                            .disciplina { width: 48%; }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="header">Olá Raphael</div>
+                        <div class="mensagens">
+                            <p>Você possui um armário reservado com entrega para hoje.</p>
+                            <p>Você possui uma pendência no financeiro.</p>
+                        </div>
+                        <div class="main">
+                            <div class="disciplina">Disciplina - Sala e Horário</div>
+                            <div class="disciplina">Disciplina - Sala e Horário</div>
+                            <div class="disciplina">Disciplina - Sala e Horário</div>
+                            <div class="disciplina">Disciplina - Sala e Horário</div>
+                        </div>
+                        <div class="noticias">
+                            <h2>Card de Notícias</h2>
+                            <p>Subtítulo</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+            ' style="width: 100%; height: 500px; border: none;"></iframe>
+        </div>
+    </div>
 </body>
 </html>

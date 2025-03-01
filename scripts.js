@@ -61,3 +61,14 @@ function reservarArmario() {
   console.log(usuario);
   console.log(armarios);
 }
+
+// Função para alternar entre as abas
+function mostrarAba(aba) {
+  // Esconder todos os conteúdos
+  document.querySelectorAll('.conteudo').forEach(function(conteudo) {
+      conteudo.classList.remove('ativo');
+  });
+
+  // Mostrar o conteúdo da aba selecionada
+  document.getElementById(aba).classList.add('ativo');
+}
