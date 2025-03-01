@@ -3,164 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard de Exercícios</title>
+    <title>Reserva de Armário</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function abrirAba(aba) {
-            if (aba === "grid") {
-                document.body.innerHTML = `
-                <!DOCTYPE html>
-                <html lang="pt">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Dashboard App Inatel</title>
-                    <style>
-                        body {
-                            font-family: Arial, sans-serif;
-                            margin: 0;
-                            padding: 0;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                        }
-                        .container {
-                            width: 414px;
-                            display: flex;
-                            flex-direction: column;
-                        }
-                        header {
-                            background-color: #f8f8f8;
-                            padding: 16px;
-                            text-align: center;
-                            font-size: 18px;
-                            font-weight: bold;
-                        }
-                        .mensagens, .aulas, .noticias {
-                            padding: 16px;
-                            border-bottom: 1px solid #ddd;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="container">
-                        <header>
-                            Olá Raphael
-                        </header>
-                        <section class="mensagens">
-                            <p>Você possui um armário reservado com entrega para hoje.</p>
-                            <p>Você possui uma pendência no financeiro.</p>
-                        </section>
-                        <section class="aulas">
-                            <div>Disciplina - Sala e Horário</div>
-                            <div>Disciplina - Sala e Horário</div>
-                            <div>Disciplina - Sala e Horário</div>
-                        </section>
-                        <section class="noticias">
-                            <div>Card de Notícias</div>
-                        </section>
-                    </div>
-                </body>
-                </html>
-                `;
-            } else {
-                // Esconde todas as abas
-                document.querySelectorAll('.aba-conteudo').forEach(div => {
-                    div.style.display = 'none';
-                });
-
-                // Exibe a aba selecionada
-                document.getElementById(aba).style.display = 'block';
-            }
-        }
-
-        function reservarArmario() {
-            let tipo = document.getElementById("tipoArmario").value;
-            document.getElementById("resultado").textContent = "Armário " + tipo + " reservado com sucesso!";
-        }
-    </script>
+    <script src="scripts.js" defer></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
-            flex-direction: column;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 400px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
         .tabs {
             display: flex;
-            justify-content: space-around;
-            background: #6200ea;
-            padding: 10px;
-            border-radius: 8px 8px 0 0;
+            gap: 16px;
+            margin-bottom: 20px;
         }
-
-        .tabs button {
-            background: none;
-            border: none;
+        .tab-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
             color: white;
-            font-size: 14px;
+            border: none;
             cursor: pointer;
-            padding: 10px;
-        }
-
-        .tabs button:hover {
-            background: rgba(255, 255, 255, 0.2);
             border-radius: 5px;
         }
-
-        .aba-conteudo {
-            display: none;
-            padding: 20px;
+        .tab-button:hover {
+            background-color: #0056b3;
         }
-
-        /* Exibe a primeira aba por padrão */
-        #reserva {
+        .tab-content {
+            display: none;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .active {
             display: block;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <!-- Aba de navegação -->
-        <div class="tabs">
-            <button onclick="abrirAba('reserva')">Reserva de Armário</button>
-            <button onclick="abrirAba('grid')">Grid e Responsividade</button>
-        </div>
-
-        <!-- Conteúdo das abas -->
-        <div id="reserva" class="aba-conteudo">
-            <h2>Reserva de Armário</h2>
-            <label for="tipoArmario">Selecione o tipo de armário:</label>
-            <select id="tipoArmario">
-                <option value="padrao">Padrão</option>
-                <option value="duplo">Duplo</option>
-            </select>
-            <button onclick="reservarArmario()">Reservar</button>
-            <p id="resultado"></p>
-        </div>
-
+        <h2>Reserva de Armário</h2>
+        <label for="tipoArmario">Selecione o tipo de armário:</label>
+        <select id="tipoArmario">
+            <option value="padrao">Padrão</option>
+            <option value="duplo">Duplo</option>
+        </select>
+        <button onclick="reservarArmario()">Reservar</button>
+        <p id="resultado"></p>
     </div>
 
+    <!-- Abas para alternar entre conteúdos -->
+    <div class="tabs">
+        <button class="tab-button" onclick="openTab('grid')">Grid</button>
+        <button class="tab-button" onclick="openTab('responsividade')">Responsividade</button>
+    </div>
+
+    <div id="grid" class="tab-content">
+        <h3>Grid</h3>
+        <p>Conteúdo sobre a estrutura de Grid...</p>
+    </div>
+    
+    <div id="responsividade" class="tab-content">
+        <h3>Responsividade</h3>
+        <p>Conteúdo sobre responsividade...</p>
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
