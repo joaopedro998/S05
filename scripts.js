@@ -72,3 +72,27 @@ function mostrarAba(aba) {
   // Mostrar o conteúdo da aba selecionada
   document.getElementById(aba).classList.add('ativo');
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Verifica se há um tema salvo no localStorage e aplica
+  const temaSalvo = localStorage.getItem("tema");
+  if (temaSalvo) {
+      document.documentElement.setAttribute("data-theme", temaSalvo);
+  }
+
+  // Exibir/ocultar menu de temas ao clicar no botão
+  document.getElementById("botaoTema").addEventListener("click", function () {
+      let menuTemas = document.getElementById("menuTemas");
+      if (menuTemas.style.display === "flex") {
+          menuTemas.style.display = "none";
+      } else {
+          menuTemas.style.display = "flex";
+      }
+  });
+});
+
+// Função para mudar o tema
+function mudarTema(tema) {
+  document.documentElement.setAttribute("data-theme", tema);
+  localStorage.setItem("tema", tema);
+}
