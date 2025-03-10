@@ -9,7 +9,7 @@
     --cor-fundo: #f0f0f0;
 }
 
-[data-theme="acessivel"] {
+[data-theme="inatel"] {
     --cor-primaria: #0044cc;
     --cor-secundaria: #ffcc00;
     --cor-destaque: #ff5733;
@@ -17,65 +17,52 @@
     --cor-fundo: #fff;
 }
 
+[data-theme="dark"] {
+    --cor-primaria: #333;
+    --cor-secundaria: #555;
+    --cor-destaque: #777;
+    --cor-texto: #fff;
+    --cor-fundo: #222;
+}
+
+[data-theme="light"] {
+    --cor-primaria: #f4c542;
+    --cor-secundaria: #d9a7c7;
+    --cor-destaque: #a7d9c7;
+    --cor-texto: #333;
+    --cor-fundo: #f0f0f0;
+}
+
 body {
     font-family: 'Arimo', sans-serif;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     padding: 16px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.header {
+header {
     background-color: var(--cor-primaria);
     padding: 20px;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
     border-radius: 8px;
+    margin-bottom: 16px;
 }
 
-.mensagens {
-    background-color: var(--cor-secundaria);
-    padding: 16px;
-    border-radius: 8px;
-}
-
-.main {
+main {
     background-color: var(--cor-destaque);
-    padding: 16px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.disciplina {
-    background-color: #fff;
-    padding: 12px;
-    border-radius: 6px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.noticias {
-    background-color: var(--cor-secundaria);
     padding: 16px;
     border-radius: 8px;
     text-align: center;
 }
 
-/* Estilos para o menu de troca de tema */
-.menu-temas {
+.theme-menu {
     position: fixed;
-    top: 10px;
+    top: 80px;
     right: 10px;
-    background: white;
+    background: var(--cor-fundo);
     border: 1px solid var(--cor-texto);
     border-radius: 8px;
     display: none;
@@ -85,22 +72,23 @@ body {
     z-index: 1000;
 }
 
-.menu-temas button {
+.theme-menu button {
     background: var(--cor-primaria);
+    color: var(--cor-texto);
     border: none;
     padding: 10px;
     margin: 5px 0;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.menu-temas button:hover {
+.theme-menu button:hover {
     background: var(--cor-secundaria);
 }
 
-/* Botão para abrir o menu */
-#botaoTema {
+.btn-theme {
     position: fixed;
     top: 10px;
     right: 10px;
@@ -111,4 +99,9 @@ body {
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-theme:hover {
+    background: var(--cor-secundaria);
 }
