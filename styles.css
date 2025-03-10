@@ -9,6 +9,7 @@
     --cor-fundo: #f0f0f0;
 }
 
+/* Tema Inatel */
 [data-theme="inatel"] {
     --cor-primaria: #0044cc;
     --cor-secundaria: #ffcc00;
@@ -17,6 +18,7 @@
     --cor-fundo: #fff;
 }
 
+/* Tema Dark */
 [data-theme="dark"] {
     --cor-primaria: #333;
     --cor-secundaria: #555;
@@ -25,6 +27,7 @@
     --cor-fundo: #222;
 }
 
+/* Tema Light */
 [data-theme="light"] {
     --cor-primaria: #f4c542;
     --cor-secundaria: #d9a7c7;
@@ -49,6 +52,7 @@ header {
     font-weight: bold;
     border-radius: 8px;
     margin-bottom: 16px;
+    color: #fff;
 }
 
 main {
@@ -56,11 +60,40 @@ main {
     padding: 16px;
     border-radius: 8px;
     text-align: center;
+    color: var(--cor-texto);
 }
 
+/* Botão para abrir o menu */
+#btn-theme {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: var(--cor-primaria);
+    color: var(--cor-texto);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-theme:hover {
+    background: var(--cor-secundaria);
+}
+
+/* Ícone do botão */
+#btn-theme .material-icons-outlined {
+    font-size: 24px;
+}
+
+/* Menu de troca de temas */
 .theme-menu {
     position: fixed;
-    top: 80px;
+    top: 50px;
     right: 10px;
     background: var(--cor-fundo);
     border: 1px solid var(--cor-texto);
@@ -70,6 +103,10 @@ main {
     padding: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+}
+
+.theme-menu.ativo {
+    display: flex;
 }
 
 .theme-menu button {
@@ -85,23 +122,5 @@ main {
 }
 
 .theme-menu button:hover {
-    background: var(--cor-secundaria);
-}
-
-.btn-theme {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: var(--cor-primaria);
-    color: var(--cor-texto);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.btn-theme:hover {
     background: var(--cor-secundaria);
 }
