@@ -1,54 +1,117 @@
-body {
-    font-family: 'Arimo', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
-header {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #209DC0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 414px;
+    background: #328096;
+    display: grid;
+    grid-template-rows: 60px auto 60px;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.header {
+    background: #01B9EB;
+    padding: 16px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background: var(--header-bg);
-    color: var(--header-text);
 }
 
-#theme-menu {
+.theme-menu {
     position: absolute;
-    top: 50px;
-    right: 20px;
-    background: white;
-    padding: 10px;
-    border: 1px solid #ccc;
+    top: 60px;
+    right: 16px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    z-index: 1000;
 }
 
-#theme-menu button {
-    display: block;
-    margin: 5px 0;
+.theme-menu button {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background: #f0f0f0;
+    cursor: pointer;
 }
 
-.hidden {
-    display: none;
+.theme-menu button:hover {
+    background: #ddd;
 }
 
-/* Tema Inatel */
-:root {
-    --header-bg: #003366;
-    --header-text: #ffffff;
-    --background: #f0f0f0;
-    --text: #000000;
+.content {
+    background: #000000;
+    padding: 16px;
+    border-radius: 8px;
 }
 
-[data-theme='dark'] {
-    --header-bg: #222222;
-    --header-text: #f0f0f0;
-    --background: #121212;
-    --text: #ffffff;
+.header2 {
+    background: #002746;
+    padding: 16px;
+    border-radius: 8px;
 }
 
-body {
-    background: var(--background);
-    color: var(--text);
+.content2 {
+    background: #1c5560;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.footer2 {
+    background: #79ae92;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.footer {
+    background: #fbffcd;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.header, .content, .footer { text-align: center; }
+
+.content {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    height: 400px;
+}
+
+.svg_logo_inatel {
+    width: 120px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+    fill: #002746; /* Cor da logo (pode ser alterada conforme o tema) */
+}
+
+.header {
+    background: #c6b299;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
