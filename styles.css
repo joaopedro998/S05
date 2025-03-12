@@ -1,107 +1,54 @@
-/* Importação da fonte do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
-
-:root {
-    --cor-primaria: #f4c542;
-    --cor-secundaria: #d9a7c7;
-    --cor-destaque: #a7d9c7;
-    --cor-texto: #333;
-    --cor-fundo: #f0f0f0;
-}
-
-[data-theme="inatel"] {
-    --cor-primaria: #0044cc;
-    --cor-secundaria: #ffcc00;
-    --cor-destaque: #ff5733;
-    --cor-texto: #000;
-    --cor-fundo: #fff;
-}
-
-[data-theme="dark"] {
-    --cor-primaria: #333;
-    --cor-secundaria: #555;
-    --cor-destaque: #777;
-    --cor-texto: #fff;
-    --cor-fundo: #222;
-}
-
-[data-theme="light"] {
-    --cor-primaria: #f4c542;
-    --cor-secundaria: #d9a7c7;
-    --cor-destaque: #a7d9c7;
-    --cor-texto: #333;
-    --cor-fundo: #f0f0f0;
-}
-
 body {
     font-family: 'Arimo', sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    padding: 16px;
-    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s, color 0.3s;
 }
 
 header {
-    background-color: var(--cor-primaria);
-    padding: 20px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 8px;
-    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--header-bg);
+    color: var(--header-text);
 }
 
-main {
-    background-color: var(--cor-destaque);
-    padding: 16px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.theme-menu {
-    position: fixed;
-    top: 80px;
-    right: 10px;
-    background: var(--cor-fundo);
-    border: 1px solid var(--cor-texto);
-    border-radius: 8px;
+#theme-menu {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
     display: none;
-    flex-direction: column;
-    padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
 }
 
-.theme-menu button {
-    background: var(--cor-primaria);
-    color: var(--cor-texto);
-    border: none;
-    padding: 10px;
+#theme-menu button {
+    display: block;
     margin: 5px 0;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
 }
 
-.theme-menu button:hover {
-    background: var(--cor-secundaria);
+.hidden {
+    display: none;
 }
 
-.btn-theme {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: var(--cor-primaria);
-    color: var(--cor-texto);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+/* Tema Inatel */
+:root {
+    --header-bg: #003366;
+    --header-text: #ffffff;
+    --background: #f0f0f0;
+    --text: #000000;
 }
 
-.btn-theme:hover {
-    background: var(--cor-secundaria);
+[data-theme='dark'] {
+    --header-bg: #222222;
+    --header-text: #f0f0f0;
+    --background: #121212;
+    --text: #ffffff;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
 }

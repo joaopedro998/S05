@@ -4,45 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Inatel</title>
-    
-    <!-- Importando a fonte do Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Ícones do Google Fonts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-
-    <!-- Importando o CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Cabeçalho -->
     <header>
-        <div class="logo">
-            <svg class="svg_logo_inatel" xmlns="http://www.w3.org/2000/svg" viewBox="100 150 390 116">
-                <path class="path_logo" d="M127.455,156.988h21.287l-21.859,102.835H105.69L127.455,156.988L127.455,156.988z ..."></path>
-            </svg>
-        </div>
-        <button id="btn-theme" class="btn-theme">
-            <span class="material-icons-outlined">palette</span>
-        </button>
+        <svg class="svg_logo_inatel" xmlns="http://www.w3.org/2000/svg" viewBox="100 150 390 116">
+            <path class="path_logo" d="M127.455,156.988h21.287l-21.859..."></path>
+        </svg>
+        <button id="theme-toggle">Trocar Tema</button>
     </header>
-
-    <!-- Menu de temas oculto -->
-    <div id="theme-menu" class="theme-menu">
-        <p>Escolha um tema:</p>
-        <button class="theme-button" data-theme="inatel">Inatel</button>
-        <button class="theme-button" data-theme="dark">Dark</button>
-        <button class="theme-button" data-theme="light">Light</button>
+    <div id="theme-menu" class="hidden">
+        <button onclick="setTheme('inatel')">Tema Inatel</button>
+        <button onclick="setTheme('dark')">Tema Dark</button>
     </div>
-
-    <!-- Conteúdo -->
     <main>
-        <h1>Bem-vindo ao Dashboard Inatel</h1>
-        <p>Personalize seu tema e salve suas preferências!</p>
+        <h1>Olá Raphael</h1>
+        <p>Você possui um armário reservado com entrega para hoje...</p>
+        <p>Você possui uma pendência no financeiro...</p>
+        <section class="disciplinas">
+            <div class="disciplina">
+                <p>Disciplina</p>
+                <p>Sala e Horário</p>
+                <span class="material-icons-outlined">event</span>
+                <span class="material-icons-outlined">location_on</span>
+            </div>
+            <div class="disciplina">
+                <p>Disciplina</p>
+                <p>Sala e Horário</p>
+                <span class="material-icons-outlined">event</span>
+                <span class="material-icons-outlined">location_on</span>
+            </div>
+            <div class="disciplina">
+                <p>Disciplina</p>
+                <p>Sala e Horário</p>
+                <span class="material-icons-outlined">event</span>
+                <span class="material-icons-outlined">location_on</span>
+            </div>
+        </section>
+        <section class="news">
+            <h2>Card de Notícias</h2>
+            <p>Subtítulo</p>
+        </section>
     </main>
-
-    <!-- Importando o JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
