@@ -52,3 +52,6 @@ body {
     background: var(--background);
     color: var(--text);
 }
+.hidden {
+    display: none;
+}
