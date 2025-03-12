@@ -1,23 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
+// Função para definir o tema
+function setTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme); // Salvar a preferência do tema
+    hideThemeMenu(); // Esconder o menu após selecionar um tema
+}
+
+// Função para alternar a visibilidade do menu de temas
+function toggleThemeMenu() {
     const themeMenu = document.getElementById('theme-menu');
-    const currentTheme = localStorage.getItem('theme') || 'inatel';
-    
-    if (!themeToggle || !themeMenu) {
-        console.error("Erro: Elementos não encontrados!");
-        return;
-    }
+    themeMenu.classList.toggle('hidden');
+}
 
-    document.documentElement.setAttribute('data-theme', currentTheme);
+// Função para esconder o menu de temas
+function hideThemeMenu() {
+    const themeMenu = document.getElementById('theme-menu');
+    themeMenu.classList.add('hidden');
+}
 
-    themeToggle.addEventListener('click', () => {
-        console.log("Botão clicado!");
-        themeMenu.classList.toggle('hidden');
-    });
+// Carregar o tema salvo ao carregar a página
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'inatel'; // Tema padrão
+    setTheme(savedTheme);
+}
 
-    window.setTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        themeMenu.classList.add('hidden');
-    };
-});
+// Event listeners
+document.getElementById('theme-toggle').addEventListener('click', toggleThemeMenu);
+document.addEventListener('DOMContentLoaded', loadTheme);
