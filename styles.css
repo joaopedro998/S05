@@ -17,23 +17,24 @@ body {
 .container {
     width: 100%;
     max-width: 414px;
-    background: #328096;
+    background: #ffffff; /* Fundo branco para melhor contraste */
     display: grid;
     grid-template-rows: 60px auto 60px;
     gap: 16px;
     padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
     position: relative;
 }
 
 .header {
-    background: #01B9EB;
+    background: #0077b6; /* Azul mais vibrante */
     padding: 16px;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white; /* Texto branco para contraste */
 }
 
 .theme-menu {
@@ -56,43 +57,52 @@ body {
     border-radius: 4px;
     background: #f0f0f0;
     cursor: pointer;
+    transition: background 0.3s ease; /* Transição suave */
 }
 
 .theme-menu button:hover {
-    background: #ddd;
+    background: #0077b6; /* Azul ao passar o mouse */
+    color: white; /* Texto branco ao passar o mouse */
 }
 
 .content {
-    background: #000000;
+    background: #f8f9fa; /* Fundo claro para melhor legibilidade */
     padding: 16px;
     border-radius: 8px;
+    color: #333; /* Texto escuro para contraste */
 }
 
 .header2 {
-    background: #002746;
+    background: #023e8a; /* Azul mais escuro */
     padding: 16px;
     border-radius: 8px;
+    color: white; /* Texto branco */
 }
 
 .content2 {
-    background: #1c5560;
+    background: #caf0f8; /* Azul claro */
     padding: 16px;
     border-radius: 8px;
+    color: #333; /* Texto escuro */
 }
 
 .footer2 {
-    background: #79ae92;
+    background: #90e0ef; /* Azul claro */
     padding: 16px;
     border-radius: 8px;
+    color: #333; /* Texto escuro */
 }
 
 .footer {
-    background: #fbffcd;
+    background: #f8f9fa; /* Fundo claro */
     padding: 16px;
     border-radius: 8px;
+    color: #333; /* Texto escuro */
 }
 
-.header, .content, .footer { text-align: center; }
+.header, .content, .footer {
+    text-align: center;
+}
 
 .content {
     display: grid;
@@ -102,16 +112,17 @@ body {
 }
 
 .svg_logo_inatel {
-    width: 120px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Mantém a proporção */
-    fill: #002746; /* Cor da logo (pode ser alterada conforme o tema) */
+    width: 120px;
+    height: auto;
+    fill: #023e8a; /* Cor da logo ajustada */
 }
 
 .header {
-    background: #c6b299;
+    background: #0077b6; /* Azul vibrante */
     padding: 16px;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white; /* Texto branco */
 }

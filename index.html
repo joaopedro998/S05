@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- Cabeçalho -->
         <div class="header">
             <!-- Logo do Inatel -->
             <svg class="svg_logo_inatel" xmlns="http://www.w3.org/2000/svg" viewBox="100 150 390 116">
@@ -15,18 +16,36 @@
             </svg>
             <button id="themeButton">☰</button>
         </div>
+
+        <!-- Menu de Temas -->
         <div class="theme-menu" id="themeMenu">
             <button onclick="changeTheme('default')">Tema Padrão</button>
             <button onclick="changeTheme('dark')">Tema Escuro</button>
             <button onclick="changeTheme('light')">Tema Claro</button>
         </div>
+
+        <!-- Conteúdo Principal -->
         <div class="content">
-            <div class="header2">mensagens</div>
-            <div class="content2">aulas</div>
-            <div class="footer2">noticias</div>   
+            <div class="header2">
+                <h2>Mensagens</h2>
+                <p>Veja suas mensagens mais recentes.</p>
+            </div>
+            <div class="content2">
+                <h2>Aulas</h2>
+                <p>Confira o cronograma de aulas.</p>
+            </div>
+            <div class="footer2">
+                <h2>Notícias</h2>
+                <p>Fique por dentro das últimas notícias.</p>
+            </div>
         </div>
-        <div class="footer">Rodapé</div>
+
+        <!-- Rodapé -->
+        <div class="footer">
+            <p>Rodapé - Projeto S05</p>
+        </div>
     </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
