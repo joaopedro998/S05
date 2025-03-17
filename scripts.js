@@ -1,7 +1,7 @@
 const events = [
     {
         id: 1,
-        title: "Semana do Software 2025",
+        title: "Semana do software 2025",
         date: "12/05",
         time: "10:00",
         location: "Salão de Eventos",
